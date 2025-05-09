@@ -1,7 +1,9 @@
 from flask import Flask, request, redirect, render_template, url_for
 import string, random, sqlite3, os
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 app.config['DATABASE'] = 'db.sqlite3'
 
 def get_db():
@@ -27,7 +29,10 @@ def index():
         db = get_db()
         db.execute('INSERT INTO urls (slug, original) VALUES (?, ?)', (slug, original))
         db.commit()
-        short_url = request.host_url + slug
+        base_url = request.url_root
+        if base_url.startswith("http://"):
+            base_url = base_url.replace("http://", "https://", 1)
+        short_url = base_url + slug
         return render_template('index.html', short_url=short_url)
     return render_template('index.html', short_url=None)
 
