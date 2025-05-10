@@ -27,5 +27,7 @@ Run app.py
 python run app.py
 ```
 
+![Screenshot](./shortlink.png)
+
 ## Live Project: 
 https://shortlink.harshitrai.com/
