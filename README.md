@@ -11,21 +11,21 @@ Shortlink is a clean and simple url shortner project built with Flask. It is des
 ## Usage:
 
 Clone Shortlink repository.
-'''
+```
 git clone https://github.com/heyharshitrai/Shortlink.git
-'''
+```
 Navigate to Shortlink folder
-'''
+```
 cd shortlink
-'''
+```
 Install requirements
-'''
+```
 pip install -r requirements.txt
-'''
+```
 Run app.py
-'''
+```
 python run app.py
-'''
+```
 
 ## Live Project: 
 https://shortlink.harshitrai.com/
