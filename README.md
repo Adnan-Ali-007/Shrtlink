@@ -30,4 +30,4 @@ python run app.py
 ![Screenshot](./shortlink.png)
 
 ## Live Project: 
-https://shortlink.harshitrai.com/
+https://adnan-ali-007-shrtli-dplb.bolt.host/
